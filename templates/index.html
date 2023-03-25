@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dog Breed Prediction</title>
+  <style type="text/css">
+    .container {
+      text-align: center;
+    }
+    .container img {
+      width: 500px;
+    }
+    .response {
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Dog Breed Predictor</h1>
+    <form method="POST" action="/predict" enctype="multipart/form-data">
+      <input type="file" name="image">
+      <input type="submit" value="Predict">
+    </form>
+
+
+    
+    {% if response %}
+    <div class="response">
+      <h2>Predicted Breed:</h2>
+      <p>{{ response }}</p>
+    </div>
+
+    <div >
+        <p>{{ img_path }}</p>
+    </div>
+
+    {% endif %}
+  </div>
+</body>
+</html>
